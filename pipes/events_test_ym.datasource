@@ -1,0 +1,11 @@
+
+SCHEMA >
+    `Customer` String `json:$.Customer`,
+    `Product` String `json:$.Product`,
+    `Qtr_4` Nullable(String) `json:$.['Qtr 4']`,
+    `Qtr_2` Nullable(String) `json:$.['Qtr 2']`,
+    `Qtr_3` Nullable(String) `json:$.['Qtr 3']`,
+    `Qtr_1` Nullable(String) `json:$.['Qtr 1']`
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "Customer, Product"
