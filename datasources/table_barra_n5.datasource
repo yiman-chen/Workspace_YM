@@ -1,0 +1,9 @@
+
+SCHEMA >
+    `column_00` Int16,
+    `column_01` Nullable(String),
+    `column_02` DateTime64(3)
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(column_02)"
+ENGINE_SORTING_KEY "column_02, column_00"

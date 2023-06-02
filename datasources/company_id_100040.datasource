@@ -1,0 +1,11 @@
+
+SCHEMA >
+    `publication_id` Int64,
+    `publication_success` Int16,
+    `published_at` DateTime,
+    `correlation_id` Nullable(String),
+    `schedule_entry_id` Int64
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(published_at)"
+ENGINE_SORTING_KEY "published_at, publication_id, publication_success, schedule_entry_id"

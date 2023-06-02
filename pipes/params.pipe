@@ -1,0 +1,14 @@
+TOKEN "params_endpoint_read_7685" READ
+
+NODE param_1
+SQL >
+
+    %
+    select
+    {% for last, x in  enumerate_with_last(split_to_array (String(str_names,'col1,col2')) ) %}
+               {{x}}
+               {% if not last %},{% end %}
+            {% end %}
+     -- from node_str_names
+
+

@@ -1,0 +1,9 @@
+
+SCHEMA >
+    `userid` Int16 `json:$.userid`,
+    `chanel` String `json:$.chanel`,
+    `date` DateTime `json:$.date`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(date)"
+ENGINE_SORTING_KEY "userid, date"

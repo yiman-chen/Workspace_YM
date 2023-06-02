@@ -1,0 +1,9 @@
+DESCRIPTION >
+    HFI with raw json
+
+SCHEMA >
+    `userid` Int32 `json:$.userid`,
+    `raw_event` String `json:$`
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "userid, raw_event"

@@ -1,0 +1,13 @@
+# Data Source created from Pipe 'test2_pipe_1364'
+
+SCHEMA >
+    `userid` Int16,
+    `chanel` String,
+    `month` Date,
+    `num_reg` AggregateFunction(count, DateTime),
+    `as_uniq_reg` AggregateFunction(uniqExact, DateTime)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYear(month)"
+ENGINE_SORTING_KEY "userid, chanel, month"
+ENGINE_TTL "month + toIntervalDay(1450)"

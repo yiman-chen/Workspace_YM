@@ -1,0 +1,27 @@
+NODE yellow_tripdata_2018_01_PD_pipe_2497_0
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01_PD where CAST(tpep_dropoff_datetime as DATE ) = '2003-01-01' 
+
+
+
+NODE yellow_tripdata_2018_01_PD_pipe_1
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01_PD where CAST(tpep_pickup_datetime as DATE ) = '2003-01-01' and CAST(tpep_dropoff_datetime as DATE ) = '2003-01-01' 
+
+
+
+NODE yellow_tripdata_2018_01_PD_pipe_2
+SQL >
+
+    SELECT distinct count(tpep_pickup_datetime) FROM yellow_tripdata_2018_01
+
+
+
+NODE yellow_tripdata_2018_01_PD_pipe_3
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01_PD where CAST(tpep_pickup_datetime as DATE ) = '2003-01-01' 
+
+

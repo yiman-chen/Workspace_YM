@@ -1,0 +1,6 @@
+NODE test_idx_0
+SQL >
+
+    select toMonday(now()) as date
+
+

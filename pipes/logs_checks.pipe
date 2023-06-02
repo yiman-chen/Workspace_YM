@@ -1,0 +1,10 @@
+NODE checks_0
+SQL >
+
+    select * from tinybird.block_log
+    where datasource_id = 't_2b6be2b7cd4a412f9b261f92bec32f6c'
+      and timestamp > now() - INTERVAL 5 hour
+  
+
+
+

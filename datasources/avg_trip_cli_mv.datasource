@@ -1,0 +1,9 @@
+
+SCHEMA >
+    `date` Date,
+    `count` AggregateFunction(count, Float32),
+    `avg_distance` AggregateFunction(avg, Float32)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYear(date)"
+ENGINE_SORTING_KEY "date"

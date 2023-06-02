@@ -1,0 +1,36 @@
+NODE yellow_tripdata_2018_01_RMT_pipe_7557_0
+SQL >
+
+    SELECT * FROM tinybird.datasources_ops_log
+    WHERE
+        datasource_id = 't_20fe960c11f74061bc1c73b040b83d46'
+        AND timestamp > now() - INTERVAL 1 day
+    ORDER BY timestamp DESC
+
+
+
+NODE yellow_tripdata_2018_01_RMT_pipe_7557_1
+SQL >
+
+    SELECT count()FROM yellow_tripdata_2018_01_RMT
+
+
+
+NODE yellow_tripdata_2018_01_RMT_pipe_7557_2
+SQL >
+
+    SELECT distinct passenger_count FROM yellow_tripdata_2018_01_RMT
+
+
+
+NODE yellow_tripdata_2018_01_RMT_pipe_7557_3
+SQL >
+
+    SELECT
+        toDate(tpep_pickup_datetime) AS date,
+        countState(trip_distance) AS count,
+        avgState(trip_distance) AS avg_distance
+    FROM yellow_tripdata_2018_01
+    GROUP BY date
+
+

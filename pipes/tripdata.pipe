@@ -1,0 +1,41 @@
+NODE tripdata_0
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01 where CAST(tpep_pickup_datetime AS DATE) = '2009-01-01' 
+
+
+
+NODE tripdata_1
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01 where trip_distance between '1' and '2' 
+
+
+
+NODE tripdata_4
+SQL >
+
+    SELECT count (distinct CAST(tpep_pickup_datetime AS DATE)) FROM yellow_tripdata_2018_01
+
+
+
+NODE tripdata_5
+SQL >
+
+    SELECT count (distinct trip_distance ) FROM yellow_tripdata_2018_01
+
+
+
+NODE tripdata_6
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01 where tpep_pickup_datetime between '2009-01-01 00:00:00' and '2009-01-01 23:59:59' 
+
+
+
+NODE tripdata_7
+SQL >
+
+    SELECT count(distinct tpep_pickup_datetime) FROM yellow_tripdata_2018_01 where tpep_pickup_datetime between '2009-01-01 00:00:00' and '2009-01-01 23:59:59' 
+
+
