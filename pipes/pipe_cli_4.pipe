@@ -1,4 +1,3 @@
-TOKEN "my_token" READ
 
 NODE pipe_cli_4_0
 SQL >

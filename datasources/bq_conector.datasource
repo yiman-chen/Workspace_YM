@@ -13,3 +13,4 @@ IMPORT_SERVICE 'bigquery'
 IMPORT_SCHEDULE '0 */12 * * *'
 IMPORT_STRATEGY 'replace'
 IMPORT_QUERY 'SELECT `a`, `b`, `c` FROM `yiman-project-1.test2.table1`'
+

@@ -6,6 +6,7 @@ DESCRIPTION >
 
 SQL >
 
-    SELECT * from table_barra_n5 where column_01 is not null and column_00 =2
+    SELECT * from table_barra_n5 
+
 
 

@@ -3,7 +3,9 @@ SQL >
 
     select 1 as column_00, 'pipe_pushed' as column_01, now() as column_02
 
+
 TYPE copy
 TARGET_DATASOURCE result_api_copy
+
 
 
