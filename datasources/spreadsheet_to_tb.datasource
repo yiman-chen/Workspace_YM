@@ -1,0 +1,8 @@
+
+SCHEMA >
+    `a` Int16,
+    `b` Int16,
+    `c` Int16
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "a, b, c"

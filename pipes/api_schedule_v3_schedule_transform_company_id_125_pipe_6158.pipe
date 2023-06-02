@@ -1,0 +1,13 @@
+NODE api_schedule_v3_schedule_transform_company_id_125_pipe_6158_0
+SQL >
+
+    SELECT * FROM api_schedule_v3_schedule_transform_company_id_125
+
+
+
+NODE api_schedule_v3_schedule_transform_company_id_125_pipe_6158_1
+SQL >
+
+    SELECT uniq(title_id), uniq(platform_id)FROM api_schedule_v3_schedule_transform_company_id_125_pipe_6158_0
+
+
