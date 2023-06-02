@@ -1,0 +1,24 @@
+DESCRIPTION >
+    Generated from /Users/yiman/Downloads/api_schedule_v3_schedule_transform_company_id_100008.csv
+
+SCHEMA >
+    `schedule_entry_id` Int32,
+    `schedule_entry_external_id` Nullable(String),
+    `schedule_entry_starts_at` Nullable(DateTime),
+    `schedule_entry_ends_at` Nullable(String),
+    `schedule_entry_type` String,
+    `schedule_entry_rights_status` Nullable(String),
+    `schedule_entry_workflow_status` Nullable(String),
+    `schedule_entry_metadata_status` Nullable(String),
+    `schedule_entry_publication_status` String,
+    `schedule_entry_automatic_asset_selection` UInt8,
+    `schedule_entry_created_at` Nullable(DateTime),
+    `schedule_entry_updated_at` Nullable(DateTime),
+    `title_id` Nullable(Int32),
+    `platform_id` Nullable(Int32),
+    `version_id` Nullable(Int32),
+    `collection_id` Nullable(Int32),
+    `rule_id` Nullable(Int32)
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "schedule_entry_id, schedule_entry_type, schedule_entry_publication_status, schedule_entry_automatic_asset_selection"

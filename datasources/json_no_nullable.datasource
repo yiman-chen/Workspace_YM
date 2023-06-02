@@ -1,0 +1,10 @@
+
+SCHEMA >
+    `a` String `json:$.a`,
+    `b` String `json:$.b`,
+    `date` DateTime `json:$.date`,
+    `userid` Int16 `json:$.userid`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(date)"
+ENGINE_SORTING_KEY "date, a, b, userid"

@@ -1,0 +1,58 @@
+TOKEN "csv_ui_pip_endpoint_read_2465" READ
+
+NODE csv_ui_pipe_8663_0
+SQL >
+
+    SELECT * FROM csv_ui
+
+
+
+NODE count_total
+SQL >
+
+    SELECT count() FROM csv_ui
+
+
+
+NODE four_passengers
+SQL >
+
+    select * from csv_ui where passenger_count = 4
+
+
+
+NODE avg_ui
+SQL >
+
+    SELECT
+        toDate(tpep_pickup_datetime) as date,
+        avg(trip_distance/(dateDiff(second, tpep_pickup_datetime, tpep_dropoff_datetime)/3600)) as average   
+    FROM csv_ui
+    where passenger_count = 4
+    and tpep_dropoff_datetime > tpep_pickup_datetime 
+    --and tpep_dropoff_datetime is not null 
+    --and tpep_pickup_datetime is not null
+    and trip_distance <> 0
+    group by date 
+    ORDER BY date ASC
+
+
+
+NODE ep_ui
+SQL >
+
+    %
+    SELECT
+        toDate(tpep_pickup_datetime) as date,
+        avg(trip_distance/(dateDiff(second, tpep_pickup_datetime, tpep_dropoff_datetime)/3600)) as average   
+    FROM csv_ui
+    where {{Int(passenger_count, 4)}}
+    and tpep_dropoff_datetime > tpep_pickup_datetime 
+    --and tpep_dropoff_datetime is not null 
+    --and tpep_pickup_datetime is not null
+    and trip_distance <> 0
+    group by date 
+    ORDER BY date ASC
+
+
+
