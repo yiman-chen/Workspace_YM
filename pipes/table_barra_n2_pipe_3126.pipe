@@ -1,0 +1,13 @@
+NODE table_barra_n2_pipe_3126_0
+SQL >
+
+    SELECT * FROM result_copy_api
+
+
+
+NODE table_barra_n2_pipe_3126_1
+SQL >
+
+    SELECT replaceAll(column_01, '\n',' ') FROM result_copy_api
+
+

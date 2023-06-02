@@ -1,0 +1,6 @@
+NODE yellow_tripdata_2018_01_RMT2_pipe_2294_0
+SQL >
+
+    SELECT * FROM yellow_tripdata_2018_01_RMT2
+
+

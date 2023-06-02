@@ -1,0 +1,12 @@
+{
+    "host": "https://api.tinybird.co",
+    "id": "60ba23df-3071-4d85-af65-8b17ba0cb0ce",
+    "name": "dev",
+    "scope": "user",
+    "token": "p.eyJ1IjogIjYwYmEyM2RmLTMwNzEtNGQ4NS1hZjY1LThiMTdiYTBjYjBjZSIsICJpZCI6ICJhYjRhOGU0YS01NzQyLTRkNDgtOGRmYi1mNDg5YWRjOTQwOWMifQ.gfEFuPfHZwZ4tq5rgX2WUJSmU7uDh8zA6gP6020IAsE",
+    "tokens": {
+        "https://api.tinybird.co": "p.eyJ1IjogIjYwYmEyM2RmLTMwNzEtNGQ4NS1hZjY1LThiMTdiYTBjYjBjZSIsICJpZCI6ICJhYjRhOGU0YS01NzQyLTRkNDgtOGRmYi1mNDg5YWRjOTQwOWMifQ.gfEFuPfHZwZ4tq5rgX2WUJSmU7uDh8zA6gP6020IAsE"
+    },
+    "user_email": "yiman.chen@tinybird.co",
+    "user_id": "6e343f09-dc92-4e80-b0a6-5472925afb0e"
+}

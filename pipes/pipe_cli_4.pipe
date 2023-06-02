@@ -1,0 +1,6 @@
+NODE pipe_cli_4_0
+SQL >
+
+    % SELECT toDate(tpep_pickup_datetime) as date, avg(trip_distance/(dateDiff(second, tpep_pickup_datetime, tpep_dropoff_datetime)/3600)) as average   FROM csv_ui where passenger_count = {{Int16(passenger_count, 4, description="number of passengers", required=True)}} group by date
+
+

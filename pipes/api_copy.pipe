@@ -1,0 +1,11 @@
+TOKEN "api_copy_endpoint_read_6707" READ
+
+NODE test_copy_api
+DESCRIPTION >
+    target_datasource: result_copy_api
+
+SQL >
+
+    SELECT * from table_barra_n5 
+
+

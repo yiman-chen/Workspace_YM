@@ -1,0 +1,12 @@
+DESCRIPTION >
+    create this datasource to ingest data from bq to tb
+
+SCHEMA >
+    `a` Nullable(Int8),
+    `b` Nullable(Int8),
+    `c` Nullable(Int8),
+    `timestamp` Date
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(timestamp)"
+ENGINE_SORTING_KEY "timestamp"

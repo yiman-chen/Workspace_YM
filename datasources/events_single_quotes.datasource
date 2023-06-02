@@ -1,0 +1,16 @@
+
+SCHEMA >
+    `arr` Array(Int16) `json:$.arr[:]`,
+    `hey` String `json:$.hey`,
+    `lets` Int16 `json:$.lets`,
+    `obj__this` String `json:$.obj__this`,
+    `obj__val` Array(Int16) `json:$.obj__val[:]`,
+    `objar__a` Array(String) `json:$.objar__a[:]`,
+    `objar__b` Array(Nullable(Int16)) `json:$.objar__b[:]`,
+    `objar__darr` Array(Nullable(String)) `json:$.objar__darr[:]`,
+    `objar__dstr` Array(Nullable(String)) `json:$.objar__dstr[:]`,
+    `objar__f__g` Array(Nullable(Int16)) `json:$.objar__f__g[:]`,
+    `objar__new` Array(Nullable(String)) `json:$.objar__new[:]`
+
+ENGINE "MergeTree"
+ENGINE_SORTING_KEY "arr, hey, lets, obj__this"

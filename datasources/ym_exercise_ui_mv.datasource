@@ -1,0 +1,10 @@
+# Data Source created from Pipe 'exercise_mv'
+
+SCHEMA >
+    `date` Date,
+    `count` AggregateFunction(count, Float32),
+    `avg_distance` AggregateFunction(avg, Float32)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(date)"
+ENGINE_SORTING_KEY "date"

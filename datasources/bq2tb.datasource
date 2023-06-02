@@ -1,0 +1,13 @@
+DESCRIPTION >
+    create this datasource to ingest data from bq to tb
+
+SCHEMA >
+    `Postcode` Nullable(String),
+    `Town_Area` Nullable(String),
+    `Region` Nullable(String),
+    `Population` Nullable(Int64),
+    `Date` Date
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(Date)"
+ENGINE_SORTING_KEY "Date"

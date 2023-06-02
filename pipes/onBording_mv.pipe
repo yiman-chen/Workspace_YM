@@ -1,0 +1,17 @@
+NODE avg_per_day_cli_mv
+DESCRIPTION >
+    count, calculate avg of trip distance per day
+
+SQL >
+
+    SELECT
+        toDate(tpep_pickup_datetime) AS date,
+        countState(trip_distance) AS count,
+        avgState(trip_distance) AS avg_distance
+    FROM yellow_tripdata_2018_01
+    GROUP BY date
+
+TYPE materialized
+DATASOURCE avg_trip_cli_mv
+
+

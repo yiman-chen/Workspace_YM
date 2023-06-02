@@ -1,0 +1,11 @@
+DESCRIPTION >
+    create a datasource with 3 columns
+
+SCHEMA >
+    `column1` String `json:$.column1`,
+    `column2` DateTime `json:$.column2`,
+    `column3` Float32 `json:$.column3`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(column2)"
+ENGINE_SORTING_KEY "column2, column1"

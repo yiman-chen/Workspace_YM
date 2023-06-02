@@ -1,0 +1,28 @@
+TOKEN "endpoint_exporter_endpoint_read_5455" READ
+
+NODE str_names
+SQL >
+
+    select 100024 as company_id, 'en_name,en_short_synopsis,en_medium_synopsis,en_long_synopsis,sv_name,sv_short_synopsis,sv_medium_synopsis,sv_long_synopsis,de_name,de_short_synopsis,de_medium_synopsis,de_long_synopsis,he_name,he_short_synopsis,he_medium_synopsis,he_long_synopsis,fr_name,fr_short_synopsis,fr_medium_synopsis,fr_long_synopsis,es_name,es_short_synopsis,es_medium_synopsis,es_long_synopsis,pt_name,pt_short_synopsis,pt_medium_synopsis,pt_long_synopsis,ja_name,ja_short_synopsis,jp_name,jp_short_synopsis,jp_medium_synopsis,jp_long_synopsis,ch_name,ch_short_synopsis,ch_medium_synopsis,ch_long_synopsis,ko_name,ko_short_synopsis,ko_medium_synopsis,ko_long_synopsis,release_year,release_category' AS str_names
+
+
+
+NODE exporter_with_filename
+DESCRIPTION >
+    CRON > */2 * * * *
+    PRENODE > str_names
+    BUCKET > gs://bebanjo
+    FILENAME >test_filename
+
+SQL >
+
+    select * from params
+
+
+
+NODE endpoint_exporter_2
+SQL >
+
+     SELECT             'en_name',             'en_short_synopsis',             'en_medium_synopsis',             'en_long_synopsis',             'sv_name',             'sv_short_synopsis',             'sv_medium_synopsis',             'sv_long_synopsis',             'de_name',             'de_short_synopsis',             'de_medium_synopsis',             'de_long_synopsis',             'he_name',             'he_short_synopsis',             'he_medium_synopsis',             'he_long_synopsis',             'fr_name',             'fr_short_synopsis',             'fr_medium_synopsis',             'fr_long_synopsis',             'es_name',             'es_short_synopsis',             'es_medium_synopsis',             'es_long_synopsis',             'pt_name',             'pt_short_synopsis',             'pt_medium_synopsis',             'pt_long_synopsis',             'ja_name',             'ja_short_synopsis',             'jp_name',             'jp_short_synopsis',             'jp_medium_synopsis',             'jp_long_synopsis',             'ch_name',             'ch_short_synopsis',             'ch_medium_synopsis',             'ch_long_synopsis',             'ko_name',             'ko_short_synopsis',             'ko_medium_synopsis',             'ko_long_synopsis',             'release_year',             'release_category'   
+
+

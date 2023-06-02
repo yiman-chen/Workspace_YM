@@ -1,0 +1,22 @@
+NODE test2_pipe_1364_0
+SQL >
+
+    SELECT
+        userid,
+        chanel,
+        toStartOfMonth(date) AS month,
+        countState(date) AS num_reg,
+        uniqExactState(date) AS as_uniq_reg
+    FROM test2
+    GROUP BY
+        userid,
+        chanel,
+        month
+
+TYPE materialized
+DATASOURCE test2_pipe_mv
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYear(month)"
+ENGINE_SORTING_KEY "userid, chanel, month"
+ENGINE_TTL "month + toIntervalDay(1450)"
+

@@ -1,0 +1,83 @@
+TOKEN "test_ym_endpoint_read_7795" READ
+
+NODE test_endpoint_exporter
+SQL >
+
+    %
+    SELECT * FROM events_test_ym 
+    WHERE  Product IN('product,4','product 2')
+    limit 10
+
+
+
+NODE regex
+SQL >
+
+    select replaceRegexpAll('my test 
+                             2', '\r|\n', ' ') as collection_name
+
+
+
+NODE test_ym_2
+SQL >
+
+    INSERT INTO events_test_ym (*) VALUES('A','B',NULL,NULL,NULL,NULL)
+
+
+
+
+NODE test_ym_3
+SQL >
+
+    SELECT has([1, 2, NULL], NULL)
+
+
+
+NODE test_ym_4
+SQL >
+
+    SELECT
+        toDate(tpep_pickup_datetime) AS date,
+        countState(trip_distance) AS count,
+        avgState(trip_distance) AS avg_distance
+    FROM yellow_tripdata_2018_01
+    GROUP BY date
+
+
+
+NODE test_ym_5
+SQL >
+
+    SELECT
+        date,
+        countMerge(count) AS count,
+        avgMerge(avg_distance) AS avg_distance
+    FROM avg_trip_cli_mv
+    GROUP BY date
+    order by date desc
+
+
+
+NODE test_ym_6
+SQL >
+
+    --SELECT parseDateTimeBestEffort('2022-12-07 T00:00:00+00:00')
+    SELECT parseDateTimeBestEffort('2022-12-07 T00:00:00+00:00')
+    JSONExtractString ({"shift":"morning","service_date":"2022-12-07T00:00:00+00:00"},'service_date') as x
+
+
+
+NODE test_ym_7
+SQL >
+
+    SELECT toDateTime('2022-12-07 T00:00:00+00:00')
+
+
+
+NODE test_ym_8
+SQL >
+
+    SET format_csv_null_representation = 'My NULL';
+    SELECT * FROM events_test_ym FORMAT CSV;
+
+

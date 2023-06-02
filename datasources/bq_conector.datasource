@@ -1,0 +1,10 @@
+
+SCHEMA >
+    `a` Nullable(Int64),
+    `b` Nullable(Int64),
+    `c` Nullable(Int64),
+    `insertion_date` DateTime DEFAULT now()
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(insertion_date)"
+ENGINE_SORTING_KEY "insertion_date"
